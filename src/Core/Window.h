@@ -27,6 +27,7 @@ namespace PoeHelper {
 		virtual uint32_t GetHeight() const = 0;
 		virtual void* GetWindowPointer() const = 0;
 		virtual ImGuiLayer* GetImGuiLayer() const = 0;
+		virtual void SetWindowShouldClose(bool shouldClose) = 0;
 		static Window* Create(const WindowProperties& windowProperties =
 			WindowProperties(POE_HELPER_APPLICATION_NAME, POE_HELPER_WIDTH, POE_HELPER_HEIGHT, POE_HELPER_WINDOW_RESIZABLE));
 	};

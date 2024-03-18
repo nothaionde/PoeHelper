@@ -10,5 +10,7 @@ namespace PoeHelper {
 		virtual ~HeaderPanel() = default;
 		virtual void Initialize(const char* id, const char* icon) override;
 		virtual void Draw() override;
+	private:
+		void HandleWindowMovement();
 	};
 }

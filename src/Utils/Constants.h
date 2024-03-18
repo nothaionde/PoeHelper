@@ -27,6 +27,8 @@
 // Application logo settings
 #define POE_HELPER_ICON_LOGO "res\\textures\\logo.png"
 #define POE_HELPER_ICON_DIMENSIONS ImVec2(28, 28)
+#define POE_HELPER_ICON_MINUS ICON_FA_MINUS
+#define POE_HELPER_ICON_TIMES ICON_FA_XMARK
 // !Application logo settings
 
 // Application dockspace id

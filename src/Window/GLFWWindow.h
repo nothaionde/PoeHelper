@@ -35,6 +35,7 @@ namespace PoeHelper {
 		{
 			return m_ImGuiLayer.get();
 		}
+		void SetWindowShouldClose(bool shouldClose) override;
 	private:
 		virtual void Initialize(const WindowProperties windowProperties);
 

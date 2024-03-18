@@ -39,6 +39,10 @@ namespace PoeHelper {
 	{
 		return false;
 	}
+	void GLFWWindow::SetWindowShouldClose(bool shouldClose)
+	{
+		glfwSetWindowShouldClose(m_Window, shouldClose ? GLFW_TRUE : GLFW_FALSE);
+	}
 	void GLFWWindow::Initialize(const WindowProperties windowProperties)
 	{
 		m_WindowData.m_Title = windowProperties.m_Title;

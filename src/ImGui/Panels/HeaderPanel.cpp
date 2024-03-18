@@ -2,6 +2,7 @@
 #include "src/Utils/Constants.h"
 #include "src/Core/Application.h"
 #include "src/Utils/TextureUtils.h"
+#include "src/Utils/WidgetUtils.h"
 
 #include "vendor/glad/include/glad/gl.h"
 
@@ -32,6 +33,7 @@ namespace PoeHelper {
 
 		if (ImGui::Begin(m_Id, NULL, headerFlags))
 		{
+			HandleWindowMovement();
 			Application::GetInstance().GetWindow().GetImGuiLayer()->m_HeaderSize = ImGui::GetWindowSize().y;
 			ImGui::Text(POE_HELPER_APPLICATION_NAME.c_str());
 
@@ -54,10 +56,19 @@ namespace PoeHelper {
 			ImGui::SetCursorPosX(windowWidth - offset1 - closeButtonAdditionalSize - gap * 2);
 			// !Extract to the method
 
+			ImGui::SameLine();
+			WidgetUtils::WindowButtons(6.0f);
+
 			ImGui::PopStyleColor();
 			ImGui::End();
 		}
 		ImGui::PopStyleVar();
 		ImGui::PopStyleVar();
+	}
+	void HeaderPanel::HandleWindowMovement()
+	{
+		if (ImGui::IsWindowHovered())
+		{
+		}
 	}
 }
