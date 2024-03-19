@@ -25,6 +25,9 @@ namespace PoeHelper {
 		virtual bool IsMinimized() = 0;
 		virtual uint32_t GetWidth() const = 0;
 		virtual uint32_t GetHeight() const = 0;
+		virtual uint32_t GetPosX() const = 0;
+		virtual uint32_t GetPosY() const = 0;
+		virtual void SetWindowPosition(uint32_t xPos, uint32_t yPos) = 0;
 		virtual void* GetWindowPointer() const = 0;
 		virtual ImGuiLayer* GetImGuiLayer() const = 0;
 		virtual void SetWindowShouldClose(bool shouldClose) = 0;

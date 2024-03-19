@@ -4,9 +4,12 @@
 #include <vector>
 
 #include "src/Core/Window.h"
+#include "src/Core/Input.h"
+#include "src/Window/GLFWInput.h"
 #include "src/ImGui/ImGuiLayer.h"
 
 namespace PoeHelper {
+	class Input;
 	class Application
 	{
 	public:
@@ -18,6 +21,10 @@ namespace PoeHelper {
 		{
 			return *m_Window;
 		}
+		Input& GetInput()
+		{
+			return *m_Input;
+		}
 		static Application& GetInstance()
 		{
 			return *s_Instance;
@@ -26,5 +33,6 @@ namespace PoeHelper {
 		static Application* s_Instance;
 		ImGuiLayer* m_ImGuiLayer;
 		std::unique_ptr<Window> m_Window;
+		std::unique_ptr<Input> m_Input;
 	};
 }

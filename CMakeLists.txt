@@ -10,17 +10,20 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/out/bin)
 add_executable (PoeHelper WIN32 "src/PoeHelper.cpp" 
 "src/Core/Application.h" "src/Core/Application.cpp"
 "src/Core/Window.h"
+ "src/Core/Input.h" 
 "src/ImGui/ImGuiLayer.h" "src/ImGui/ImGuiLayer.cpp"
 "src/PoeHelper/PoeHelperApplication.h"
 "src/Utils/Constants.h"
 "src/Window/GLFWWindow.h" "src/Window/GLFWWindow.cpp"
- "src/Utils/Constants.cpp" 
- "src/ImGui/Panels/Panel.h" "src/ImGui/Panels/Panel.cpp" 
- "src/ImGui/Panels/HeaderPanel.h" "src/ImGui/Panels/HeaderPanel.cpp" 
-   "src/Utils/FileUtils.h" "src/Utils/FileUtils.cpp" 
-   "src/ImGui/Panels/CentralDockingSpace.h" "src/ImGui/Panels/CentralDockingSpace.cpp"
- "src/Utils/TextureUtils.h" "src/Utils/TextureUtils.cpp"
- "src/ImGui/Panels/ConfigPanel.h" "src/ImGui/Panels/ConfigPanel.cpp" "src/Utils/WidgetUtils.h" "src/Utils/WidgetUtils.cpp")
+"src/Utils/Constants.cpp" 
+"src/ImGui/Panels/Panel.h" "src/ImGui/Panels/Panel.cpp" 
+"src/ImGui/Panels/HeaderPanel.h" "src/ImGui/Panels/HeaderPanel.cpp" 
+"src/Utils/FileUtils.h" "src/Utils/FileUtils.cpp" 
+"src/ImGui/Panels/CentralDockingSpace.h" "src/ImGui/Panels/CentralDockingSpace.cpp"
+"src/Utils/TextureUtils.h" "src/Utils/TextureUtils.cpp"
+"src/ImGui/Panels/ConfigPanel.h" "src/ImGui/Panels/ConfigPanel.cpp" 
+"src/Utils/WidgetUtils.h" "src/Utils/WidgetUtils.cpp"    
+"src/Window/GLFWInput.h" "src/Window/GLFWInput.cpp" "src/Core/MouseCodes.h")
 
 set_target_properties( ${PROJECT_NAME}
     PROPERTIES

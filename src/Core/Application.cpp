@@ -11,6 +11,7 @@ namespace PoeHelper {
 		WindowProperties windowProperties{ name, width, height, resizable };
 
 		m_Window = std::unique_ptr<Window>(Window::Create(windowProperties));
+		m_Input = std::unique_ptr<Input>(Input::Create());
 	}
 	void Application::Run()
 	{

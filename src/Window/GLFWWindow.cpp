@@ -39,6 +39,12 @@ namespace PoeHelper {
 	{
 		return false;
 	}
+	void GLFWWindow::SetWindowPosition(uint32_t xPos, uint32_t yPos)
+	{
+		m_WindowData.m_XPos = xPos;
+		m_WindowData.m_YPos = yPos;
+		glfwSetWindowPos(m_Window, xPos, yPos);
+	}
 	void GLFWWindow::SetWindowShouldClose(bool shouldClose)
 	{
 		glfwSetWindowShouldClose(m_Window, shouldClose ? GLFW_TRUE : GLFW_FALSE);
@@ -58,7 +64,8 @@ namespace PoeHelper {
 		glfwWindowHint(GLFW_RESIZABLE, windowProperties.m_WindowResizable ? GLFW_TRUE : GLFW_FALSE);
 		glfwWindowHint(GLFW_DECORATED, GLFW_FALSE);
 		m_Window = glfwCreateWindow(windowProperties.m_Width, windowProperties.m_Height, windowProperties.m_Title.c_str(), NULL, NULL);
-		glfwSetWindowPos(m_Window, 100, 100);
+		// TODO: remove next line after serialization and deserialization
+		SetWindowPosition(100, 100);
 		glfwMakeContextCurrent(m_Window);
 		gladLoadGL(glfwGetProcAddress);
 		glfwSwapInterval(GLFW_TRUE);

@@ -5,7 +5,6 @@
 #include "vendor/imgui-docking/backends/imgui_impl_glfw.h"
 #include "vendor/imgui-docking/backends/imgui_impl_opengl3.h"
 
-
 // Application main settings
 #define POE_HELPER_VERSION "0.01"
 #define POE_HELPER_WIDTH 400
@@ -15,7 +14,6 @@
 #define POE_HELPER_FONT_AWESOME_FONT_PATH std::string("res\\fonts\\" + std::string(FONT_ICON_FILE_NAME_FAS))
 #define POE_HELPER_FONT_DEFAULT_FONT_PATH std::string("res\\fonts\\" + std::string("Fontin-Regular.ttf"))
 // !Application main settings
-
 
 // Application footer and header sizes
 #define POE_HELPER_FOOTER_HIEGHT 20

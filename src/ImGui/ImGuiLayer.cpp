@@ -21,7 +21,6 @@ namespace PoeHelper {
 		m_HeaderPanel.Draw();
 		CentralDockingSpace::Draw();
 		m_ConfiguraionPanel.Draw();
-		ImGui::ShowDemoWindow();
 
 		ImGui::PopStyleVar();
 		ImGui::PopStyleVar();
@@ -32,7 +31,8 @@ namespace PoeHelper {
 	// FIXME: Add cyrillic font support
 	void ImGuiLayer::Initialize()
 	{
-		m_FooterSize = 20.0f;
+		// Don't need footer atm
+		m_FooterSize = 0.0f;
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGuiIO& io = ImGui::GetIO();

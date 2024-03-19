@@ -12,7 +12,7 @@ namespace PoeHelper {
 	{
 		const ImVec2 windowPos = ImGui::GetWindowPos();
 		const float windowWidth = ImGui::GetWindowWidth();
-		const float offsetFromRight = 35.0f;
+		const float offsetFromRight = 20.0f;
 		const ImVec2 buttonSize = ImVec2(25 * sizeMultiplier, 20 * sizeMultiplier);
 		const float closeButtonAdditionalSize = 8.0f;
 		const float frameRounding = 0.4f;
@@ -54,7 +54,7 @@ namespace PoeHelper {
 		{
 			const ImVec2 cursorScreenPos = ImGui::GetCursorScreenPos();
 			const std::string buttonId = "##_" + std::string(icon);
-			 buttonPressed = ImGui::Button(buttonId.c_str(), size);
+			buttonPressed = ImGui::Button(buttonId.c_str(), size);
 			std::string labelText = std::string(icon);
 			std::string displayText = labelText.substr(0, labelText.find("#"));
 			const ImVec2 textSize = ImGui::CalcTextSize(displayText.c_str());

@@ -27,6 +27,16 @@ namespace PoeHelper {
 		{
 			return m_WindowData.m_Height;
 		}
+
+		inline uint32_t GetPosX() const override
+		{
+			return m_WindowData.m_XPos;
+		}
+		inline uint32_t GetPosY() const override
+		{
+			return m_WindowData.m_YPos;
+		}
+		void SetWindowPosition(uint32_t xPos, uint32_t yPos) override;
 		inline void* GetWindowPointer() const override
 		{
 			return m_Window;
@@ -47,6 +57,8 @@ namespace PoeHelper {
 			std::string m_Title;
 			uint32_t m_Width;
 			uint32_t m_Height;
+			uint32_t m_XPos;
+			uint32_t m_YPos;
 		};
 		WindowData m_WindowData;
 	};
