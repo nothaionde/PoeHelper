@@ -50,6 +50,7 @@ namespace PoeHelper {
 		virtual void Initialize(const WindowProperties windowProperties);
 
 	private:
+		bool m_WindowShouldSetNewPos;
 		GLFWwindow* m_Window;
 		std::unique_ptr<ImGuiLayer> m_ImGuiLayer;
 		struct WindowData

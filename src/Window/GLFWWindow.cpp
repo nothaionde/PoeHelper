@@ -23,13 +23,15 @@ namespace PoeHelper {
 	void GLFWWindow::Update()
 	{
 		glfwPollEvents();
-
 		glClear(GL_COLOR_BUFFER_BIT);
 		glClearColor(0.0f, 0.0f, 0.0f, 1);
-
 		m_ImGuiLayer->Update();
-
 		glfwSwapBuffers(m_Window);
+		if (m_WindowShouldSetNewPos)
+		{
+			m_WindowShouldSetNewPos = false;
+			glfwSetWindowPos(m_Window, m_WindowData.m_XPos, m_WindowData.m_YPos);
+		}
 	}
 	bool GLFWWindow::WindowShouldClose()
 	{
@@ -43,7 +45,7 @@ namespace PoeHelper {
 	{
 		m_WindowData.m_XPos = xPos;
 		m_WindowData.m_YPos = yPos;
-		glfwSetWindowPos(m_Window, xPos, yPos);
+		m_WindowShouldSetNewPos = true;
 	}
 	void GLFWWindow::SetWindowShouldClose(bool shouldClose)
 	{
@@ -51,6 +53,7 @@ namespace PoeHelper {
 	}
 	void GLFWWindow::Initialize(const WindowProperties windowProperties)
 	{
+		m_WindowShouldSetNewPos = false;
 		m_WindowData.m_Title = windowProperties.m_Title;
 		m_WindowData.m_Width = windowProperties.m_Width;
 		m_WindowData.m_Height = windowProperties.m_Height;
