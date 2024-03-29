@@ -73,6 +73,9 @@ namespace PoeHelper {
 		gladLoadGL(glfwGetProcAddress);
 		glfwSwapInterval(GLFW_TRUE);
 
+		// TODO: next line will show main window always on top
+		glfwSetWindowAttrib(m_Window, GLFW_FLOATING, GLFW_TRUE);
+
 		m_ImGuiLayer = std::make_unique<ImGuiLayer>(m_Window);
 	}
 }

@@ -8,7 +8,7 @@
 #include "vendor/imgui-docking/imgui.h"
 
 #define ID_HEADER "Header"
-#define ID_CONFIGURATION POE_HELPER_ICON_CONFIG_WINDOW "Config"
+#define ID_CONFIGURATION "Main"
 #define ID_FOOTER "Footer"
 
 namespace PoeHelper {

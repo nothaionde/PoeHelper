@@ -7,6 +7,8 @@ namespace PoeHelper {
 	public:
 		ConfigPanel() = default;
 		virtual ~ConfigPanel() = default;
+		void UncheckOtherBools(const char* label);
+		void DrawColorChoose(const char* item);
 		virtual void Initialize(const char* id, const char* icon) override;
 		virtual void Draw() override;
 	private:

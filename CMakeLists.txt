@@ -23,7 +23,7 @@ add_executable (PoeHelper WIN32 "src/PoeHelper.cpp"
 "src/Utils/TextureUtils.h" "src/Utils/TextureUtils.cpp"
 "src/ImGui/Panels/ConfigPanel.h" "src/ImGui/Panels/ConfigPanel.cpp" 
 "src/Utils/WidgetUtils.h" "src/Utils/WidgetUtils.cpp"    
-"src/Window/GLFWInput.h" "src/Window/GLFWInput.cpp" "src/Core/MouseCodes.h")
+"src/Window/GLFWInput.h" "src/Window/GLFWInput.cpp" "src/Core/MouseCodes.h" "src/ApplicationLogic/PoeHelperCraftingConstants.h" "src/ApplicationLogic/PoeHelperCraftingConstants.cpp")
 
 set_target_properties( ${PROJECT_NAME}
     PROPERTIES

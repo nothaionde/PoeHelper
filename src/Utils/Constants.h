@@ -13,6 +13,7 @@
 #define POE_HELPER_WINDOW_RESIZABLE false
 #define POE_HELPER_FONT_AWESOME_FONT_PATH std::string("res\\fonts\\" + std::string(FONT_ICON_FILE_NAME_FAS))
 #define POE_HELPER_FONT_DEFAULT_FONT_PATH std::string("res\\fonts\\" + std::string("Fontin-Regular.ttf"))
+#define POE_HELPER_DEFAULT_TAB_SIZE 15
 // !Application main settings
 
 // Application footer and header sizes

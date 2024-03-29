@@ -1,4 +1,5 @@
 #include "Application.h"
+#include "src/ApplicationLogic/PoeHelperCraftingConstants.h"
 #include <cassert>
 
 namespace PoeHelper {
@@ -8,6 +9,9 @@ namespace PoeHelper {
 	{
 		assert(!s_Instance, "Application already exists!");
 		s_Instance = this;
+
+		PoeHelperCraftingConstants::Initialize();
+
 		WindowProperties windowProperties{ name, width, height, resizable };
 
 		m_Window = std::unique_ptr<Window>(Window::Create(windowProperties));

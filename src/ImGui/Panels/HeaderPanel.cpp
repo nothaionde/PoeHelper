@@ -36,6 +36,8 @@ namespace PoeHelper {
 		{
 			HandleWindowMovement();
 			Application::GetInstance().GetWindow().GetImGuiLayer()->m_HeaderSize = ImGui::GetWindowSize().y;
+
+			ImGui::SetCursorPosX(POE_HELPER_DEFAULT_TAB_SIZE);
 			ImGui::Text(POE_HELPER_APPLICATION_NAME.c_str());
 
 			ImGui::SameLine();
