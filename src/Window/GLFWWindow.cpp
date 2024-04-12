@@ -1,9 +1,9 @@
 #include "GLFWWindow.h"
+#include "src/Utils/TextureUtils.h"
 #include <cassert>
 
 namespace PoeHelper {
 	static bool s_GLFWInitialized = false;
-
 	static void GLFWErrorCallback(int error, const char* description)
 	{
 	}
@@ -24,7 +24,7 @@ namespace PoeHelper {
 	{
 		glfwPollEvents();
 		glClear(GL_COLOR_BUFFER_BIT);
-		glClearColor(0.0f, 0.0f, 0.0f, 1);
+		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 		m_ImGuiLayer->Update();
 		glfwSwapBuffers(m_Window);
 		if (m_WindowShouldSetNewPos)
@@ -51,6 +51,11 @@ namespace PoeHelper {
 	{
 		glfwSetWindowShouldClose(m_Window, shouldClose ? GLFW_TRUE : GLFW_FALSE);
 	}
+	// TODO: Window should be always on top only when auto craft is enabled
+	void GLFWWindow::SetWindowAlwaysOnTop(bool onTop)
+	{
+		glfwSetWindowAttrib(m_Window, GLFW_FLOATING, onTop ? GLFW_TRUE : GLFW_FALSE);
+	}
 	void GLFWWindow::Initialize(const WindowProperties windowProperties)
 	{
 		m_WindowShouldSetNewPos = false;
@@ -73,8 +78,9 @@ namespace PoeHelper {
 		gladLoadGL(glfwGetProcAddress);
 		glfwSwapInterval(GLFW_TRUE);
 
-		// TODO: next line will show main window always on top
-		glfwSetWindowAttrib(m_Window, GLFW_FLOATING, GLFW_TRUE);
+		GLFWimage icon[1];
+		icon[0].pixels = TextureUtils::GetPixelsFromFile(POE_HELPER_ICON_LOGO);
+		glfwSetWindowIcon(m_Window, 1, icon);
 
 		m_ImGuiLayer = std::make_unique<ImGuiLayer>(m_Window);
 	}

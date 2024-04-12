@@ -36,4 +36,12 @@ namespace PoeHelper {
 
 		return image_texture;
 	}
+	unsigned char* TextureUtils::GetPixelsFromFile(const char* filename)
+	{
+		int image_width, image_height, image_channels;
+		stbi_info(filename, &image_width, &image_height, &image_channels);
+
+		// Load image data from file
+		return stbi_load(filename, &image_width, &image_height, &image_channels, STBI_rgb_alpha);
+	}
 }

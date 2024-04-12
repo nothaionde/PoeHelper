@@ -9,5 +9,6 @@ namespace PoeHelper {
 	{
 	public:
 		static bool LoadTextureFromFile(const char* filename);
+		static unsigned char* GetPixelsFromFile(const char* filename);
 	};
 }

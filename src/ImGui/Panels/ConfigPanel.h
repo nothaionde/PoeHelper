@@ -12,6 +12,11 @@ namespace PoeHelper {
 		virtual void Initialize(const char* id, const char* icon) override;
 		virtual void Draw() override;
 	private:
+		void ShowHotkeysWindow();
+		void ShowSettingsWindow();
+	private:
 		ImGuiWindowFlags m_windowFlags;
+		static bool m_ShowHotkeys;
+		static bool m_ShowSettings;
 	};
 }
